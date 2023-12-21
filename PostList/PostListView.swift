@@ -39,6 +39,14 @@ struct PostListView: View {
             )
         }
         }
+        .alert("Important Message", isPresented: $postViewModel.loadPostFailed, actions: {
+            Text("Reload application")
+        }, message: {
+            Text("Please come back later")
+        })
+        .refreshable {
+            postViewModel.fetchPosts()
+        }
     }
 }
 

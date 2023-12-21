@@ -10,6 +10,8 @@ import Combine
 
 class PostViewModel: ObservableObject {
     @Published var posts: [Post] = []
+    @Published var loadPostFailed: Bool = false
+    
     private let postService: PostServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
@@ -26,6 +28,7 @@ class PostViewModel: ObservableObject {
                     case .finished:
                         break
                     case .failure(let error):
+                        self.loadPostFailed = true
                         print("API Request failed: \(error)")
                     }
                 }, receiveValue: { [weak self] data in
