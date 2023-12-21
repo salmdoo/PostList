@@ -15,22 +15,23 @@ class PostViewModel: ObservableObject {
     
     init(postService: PostServiceProtocol) {
         self.postService = postService
-        postService.getAllPost()
+        fetchPosts()
     }
     
     func fetchPosts(){
         postService.getAllPost()
             .receive(on: DispatchQueue.main)
-//            .sink(receiveCompletion: {_ in  }, 
-//                  receiveValue: { [weak self] data in
-//                self?.posts = data
-//                print("self?.posts")
-//            })
-            .sink(receiveCompletion: { _ in }) { data in
-                            self.posts = data
-                print("self?.posts")
-                        }
-            .store(in: &cancellables)
+            .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        print("API Request failed: \(error)")
+                    }
+                }, receiveValue: { [weak self] data in
+                    self?.posts = data
+                })
+                .store(in: &cancellables)
     }
     
 }

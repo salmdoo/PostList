@@ -18,16 +18,25 @@ struct PostListView: View {
     var body: some View {
         ScrollView {
             ForEach(postViewModel.posts) { post in
-                LazyVStack (spacing: 20) {
-                    VStack (alignment: .leading, spacing: 10) {
-                        Text(post.title.capitalized)
-                            .font(.title)
-                            .bold()
-                        Text(post.body)
+                LazyVStack (alignment: .leading, spacing: 20) {
+                    Text(post.title.capitalized)
+                        .font(.title)
+                        .bold()
+                    Text(post.body)
+                    HStack {
+                        Spacer()
                         Text(post.postedBy)
-                        //.frame(maxWidth: .infinity, alignment: .trailing)
+                            .font(.caption)
+                            .italic()
                     }
             }
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.white)
+                    .shadow(radius: 10)
+                
+            )
         }
         }
     }

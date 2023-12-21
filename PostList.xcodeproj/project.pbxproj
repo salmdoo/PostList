@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		146FED082B34618300C9A319 /* PostListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED072B34618300C9A319 /* PostListApp.swift */; };
-		146FED0A2B34618300C9A319 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED092B34618300C9A319 /* ContentView.swift */; };
 		146FED0C2B34618400C9A319 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146FED0B2B34618400C9A319 /* Assets.xcassets */; };
 		146FED0F2B34618400C9A319 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 146FED0E2B34618400C9A319 /* Preview Assets.xcassets */; };
-		146FED162B3461EA00C9A319 /* HttpSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED152B3461EA00C9A319 /* HttpSetting.swift */; };
-		146FED182B34636300C9A319 /* PostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED172B34636300C9A319 /* PostAPI.swift */; };
+		146FED162B3461EA00C9A319 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED152B3461EA00C9A319 /* HttpService.swift */; };
 		146FED1A2B3464DD00C9A319 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED192B3464DD00C9A319 /* PostService.swift */; };
 		146FED1C2B34671F00C9A319 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED1B2B34671F00C9A319 /* Post.swift */; };
 		146FED1E2B34677000C9A319 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED1D2B34677000C9A319 /* PostListView.swift */; };
@@ -22,11 +20,9 @@
 /* Begin PBXFileReference section */
 		146FED042B34618300C9A319 /* PostList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146FED072B34618300C9A319 /* PostListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListApp.swift; sourceTree = "<group>"; };
-		146FED092B34618300C9A319 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		146FED0B2B34618400C9A319 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		146FED0E2B34618400C9A319 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		146FED152B3461EA00C9A319 /* HttpSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpSetting.swift; sourceTree = "<group>"; };
-		146FED172B34636300C9A319 /* PostAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostAPI.swift; sourceTree = "<group>"; };
+		146FED152B3461EA00C9A319 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		146FED192B3464DD00C9A319 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		146FED1B2B34671F00C9A319 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		146FED1D2B34677000C9A319 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
@@ -64,11 +60,9 @@
 			isa = PBXGroup;
 			children = (
 				146FED072B34618300C9A319 /* PostListApp.swift */,
-				146FED092B34618300C9A319 /* ContentView.swift */,
 				146FED0B2B34618400C9A319 /* Assets.xcassets */,
 				146FED0D2B34618400C9A319 /* Preview Content */,
-				146FED152B3461EA00C9A319 /* HttpSetting.swift */,
-				146FED172B34636300C9A319 /* PostAPI.swift */,
+				146FED152B3461EA00C9A319 /* HttpService.swift */,
 				146FED192B3464DD00C9A319 /* PostService.swift */,
 				146FED1B2B34671F00C9A319 /* Post.swift */,
 				146FED1D2B34677000C9A319 /* PostListView.swift */,
@@ -156,11 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				146FED202B34752700C9A319 /* PostViewModel.swift in Sources */,
-				146FED182B34636300C9A319 /* PostAPI.swift in Sources */,
-				146FED162B3461EA00C9A319 /* HttpSetting.swift in Sources */,
+				146FED162B3461EA00C9A319 /* HttpService.swift in Sources */,
 				146FED1A2B3464DD00C9A319 /* PostService.swift in Sources */,
 				146FED1C2B34671F00C9A319 /* Post.swift in Sources */,
-				146FED0A2B34618300C9A319 /* ContentView.swift in Sources */,
 				146FED082B34618300C9A319 /* PostListApp.swift in Sources */,
 				146FED1E2B34677000C9A319 /* PostListView.swift in Sources */,
 			);

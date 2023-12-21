@@ -8,8 +8,39 @@
 import Foundation
 import Combine
 
+struct PostAPIEndpoint {
+    static let domain = "https://jsonplaceholder.typicode.com"
+    static let getAllPost = "/posts"
+}
+
+
+enum PostAPI: API {
+    case getAllPost
+    
+    var domain: String {
+        switch self {
+        case .getAllPost:
+            return PostAPIEndpoint.domain
+        }
+    }
+    
+    var path: String {
+        switch self {
+        case .getAllPost:
+            return PostAPIEndpoint.getAllPost
+        }
+    }
+    
+    var method: HTTPMethod {
+        switch self {
+        case .getAllPost:
+            return HTTPMethod.get
+        }
+    }
+}
+
 protocol PostServiceProtocol {
-    func getAllPost() -> AnyPublisher<[Post], APIError>
+    func getAllPost() -> AnyPublisher<[Post], RequestError>
 }
 
 struct PostService: PostServiceProtocol {
@@ -21,10 +52,8 @@ struct PostService: PostServiceProtocol {
         self.api = api
     }
     
-    func getAllPost() -> AnyPublisher<[Post], APIError> {
+    func getAllPost() -> AnyPublisher<[Post], RequestError> {
         return apiRequestProtocol.request(api)
-//        print(res)
-//        return res
     }
     
     
