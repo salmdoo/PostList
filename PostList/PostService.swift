@@ -8,26 +8,19 @@
 import Foundation
 import Combine
 
-struct PostAPIEndpoint {
-    static let domain = "https://jsonplaceholder.typicode.com"
-    static let getAllPost = "/posts"
+struct APIEndpoint {
+    private static let domain = "https://jsonplaceholder.typicode.com"
+    static let getAllPost = "\(domain)/posts"
 }
 
 
 enum PostAPI: API {
     case getAllPost
     
-    var domain: String {
+    var url: String {
         switch self {
         case .getAllPost:
-            return PostAPIEndpoint.domain
-        }
-    }
-    
-    var path: String {
-        switch self {
-        case .getAllPost:
-            return PostAPIEndpoint.getAllPost
+            return APIEndpoint.getAllPost
         }
     }
     
@@ -39,11 +32,11 @@ enum PostAPI: API {
     }
 }
 
-protocol PostServiceProtocol {
+protocol ServiceProtocol {
     func getAllPost() -> AnyPublisher<[Post], RequestError>
 }
 
-struct PostService: PostServiceProtocol {
+struct PostService: ServiceProtocol {
     private let apiRequestProtocol: APIRequestProtocol
     private let api: API
     
@@ -53,7 +46,7 @@ struct PostService: PostServiceProtocol {
     }
     
     func getAllPost() -> AnyPublisher<[Post], RequestError> {
-        return apiRequestProtocol.request(api)
+        return apiRequestProtocol.fetchData(api)
     }
     
     

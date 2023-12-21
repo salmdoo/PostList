@@ -8,12 +8,12 @@
 import Foundation
 
 struct Post: Identifiable, Decodable {
-    let userId: Int
-    let id: Int
-    let title: String
-    let body: String
+    let userId: Int?
+    let id: Int?
+    let title: String?
+    let body: String?
     
-    var postedBy: String {
-        return "Posted By User \(self.userId)"
+    var postedBy: String? {
+        userId != nil ? "Posted By User \(userId!)" : nil
     }
 }

@@ -15,7 +15,20 @@
 		146FED1C2B34671F00C9A319 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED1B2B34671F00C9A319 /* Post.swift */; };
 		146FED1E2B34677000C9A319 /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED1D2B34677000C9A319 /* PostListView.swift */; };
 		146FED202B34752700C9A319 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED1F2B34752700C9A319 /* PostViewModel.swift */; };
+		146FED2C2B34D0D900C9A319 /* PostListUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED2B2B34D0D900C9A319 /* PostListUnitTests.swift */; };
+		146FED332B34D30500C9A319 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED322B34D30500C9A319 /* MockURLProtocol.swift */; };
+		146FED342B34D75200C9A319 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED322B34D30500C9A319 /* MockURLProtocol.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		146FED2D2B34D0D900C9A319 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 146FECFC2B34618300C9A319 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 146FED032B34618300C9A319;
+			remoteInfo = PostList;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		146FED042B34618300C9A319 /* PostList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PostList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,10 +40,20 @@
 		146FED1B2B34671F00C9A319 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		146FED1D2B34677000C9A319 /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		146FED1F2B34752700C9A319 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		146FED292B34D0D900C9A319 /* PostListUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostListUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		146FED2B2B34D0D900C9A319 /* PostListUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListUnitTests.swift; sourceTree = "<group>"; };
+		146FED322B34D30500C9A319 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		146FED012B34618300C9A319 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		146FED262B34D0D900C9A319 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				146FED062B34618300C9A319 /* PostList */,
+				146FED2A2B34D0D900C9A319 /* PostListUnitTests */,
 				146FED052B34618300C9A319 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				146FED042B34618300C9A319 /* PostList.app */,
+				146FED292B34D0D900C9A319 /* PostListUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,14 +84,14 @@
 		146FED062B34618300C9A319 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
-				146FED072B34618300C9A319 /* PostListApp.swift */,
-				146FED0B2B34618400C9A319 /* Assets.xcassets */,
-				146FED0D2B34618400C9A319 /* Preview Content */,
 				146FED152B3461EA00C9A319 /* HttpService.swift */,
 				146FED192B3464DD00C9A319 /* PostService.swift */,
 				146FED1B2B34671F00C9A319 /* Post.swift */,
 				146FED1D2B34677000C9A319 /* PostListView.swift */,
 				146FED1F2B34752700C9A319 /* PostViewModel.swift */,
+				146FED072B34618300C9A319 /* PostListApp.swift */,
+				146FED0B2B34618400C9A319 /* Assets.xcassets */,
+				146FED0D2B34618400C9A319 /* Preview Content */,
 			);
 			path = PostList;
 			sourceTree = "<group>";
@@ -77,6 +102,15 @@
 				146FED0E2B34618400C9A319 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		146FED2A2B34D0D900C9A319 /* PostListUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				146FED2B2B34D0D900C9A319 /* PostListUnitTests.swift */,
+				146FED322B34D30500C9A319 /* MockURLProtocol.swift */,
+			);
+			path = PostListUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +133,24 @@
 			productReference = 146FED042B34618300C9A319 /* PostList.app */;
 			productType = "com.apple.product-type.application";
 		};
+		146FED282B34D0D900C9A319 /* PostListUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 146FED2F2B34D0D900C9A319 /* Build configuration list for PBXNativeTarget "PostListUnitTests" */;
+			buildPhases = (
+				146FED252B34D0D900C9A319 /* Sources */,
+				146FED262B34D0D900C9A319 /* Frameworks */,
+				146FED272B34D0D900C9A319 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				146FED2E2B34D0D900C9A319 /* PBXTargetDependency */,
+			);
+			name = PostListUnitTests;
+			productName = PostListUnitTests;
+			productReference = 146FED292B34D0D900C9A319 /* PostListUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -111,6 +163,10 @@
 				TargetAttributes = {
 					146FED032B34618300C9A319 = {
 						CreatedOnToolsVersion = 15.1;
+					};
+					146FED282B34D0D900C9A319 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 146FED032B34618300C9A319;
 					};
 				};
 			};
@@ -128,6 +184,7 @@
 			projectRoot = "";
 			targets = (
 				146FED032B34618300C9A319 /* PostList */,
+				146FED282B34D0D900C9A319 /* PostListUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -142,6 +199,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		146FED272B34D0D900C9A319 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -149,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146FED342B34D75200C9A319 /* MockURLProtocol.swift in Sources */,
 				146FED202B34752700C9A319 /* PostViewModel.swift in Sources */,
 				146FED162B3461EA00C9A319 /* HttpService.swift in Sources */,
 				146FED1A2B3464DD00C9A319 /* PostService.swift in Sources */,
@@ -158,7 +223,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		146FED252B34D0D900C9A319 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				146FED2C2B34D0D900C9A319 /* PostListUnitTests.swift in Sources */,
+				146FED332B34D30500C9A319 /* MockURLProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		146FED2E2B34D0D900C9A319 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 146FED032B34618300C9A319 /* PostList */;
+			targetProxy = 146FED2D2B34D0D900C9A319 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		146FED102B34618400C9A319 /* Debug */ = {
@@ -336,6 +418,40 @@
 			};
 			name = Release;
 		};
+		146FED302B34D0D900C9A319 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salmdoo.DemoMap.PostListUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostList.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PostList";
+			};
+			name = Debug;
+		};
+		146FED312B34D0D900C9A319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salmdoo.DemoMap.PostListUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PostList.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PostList";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +469,15 @@
 			buildConfigurations = (
 				146FED132B34618400C9A319 /* Debug */,
 				146FED142B34618400C9A319 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		146FED2F2B34D0D900C9A319 /* Build configuration list for PBXNativeTarget "PostListUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				146FED302B34D0D900C9A319 /* Debug */,
+				146FED312B34D0D900C9A319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

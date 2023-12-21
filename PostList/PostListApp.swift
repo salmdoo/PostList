@@ -11,7 +11,7 @@ import SwiftUI
 struct PostListApp: App {
     var body: some Scene {
         WindowGroup {
-            PostListView(postServiceProtocol: PostService(apiRequetProtocol: APIRequest(urlSession: URLSession.shared), api: PostAPI.getAllPost))
+            PostListView(serviceProtocol: PostService(apiRequetProtocol: APIRequest(), api: PostAPI.getAllPost))
         }
     }
 }

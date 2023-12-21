@@ -8,20 +8,21 @@
 import Foundation
 import Combine
 
-class PostViewModel: ObservableObject {
-    @Published var posts: [Post] = []
-    @Published var loadPostFailed: Bool = false
+@Observable
+class PostViewModel {
+    var posts: [Post] = []
+    var loadPostFailed: Bool = false
     
-    private let postService: PostServiceProtocol
+    private let serviceProtocol: ServiceProtocol
     private var cancellables = Set<AnyCancellable>()
     
-    init(postService: PostServiceProtocol) {
-        self.postService = postService
+    init(service: ServiceProtocol) {
+        self.serviceProtocol = service
         fetchPosts()
     }
     
     func fetchPosts(){
-        postService.getAllPost()
+        serviceProtocol.getAllPost()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                     switch completion {

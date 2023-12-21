@@ -8,39 +8,51 @@
 import SwiftUI
 
 struct PostListView: View {
-    @StateObject var postViewModel: PostViewModel
+    @State private var postViewModel: PostViewModel
     
-    init(postServiceProtocol: PostServiceProtocol) {
-        self._postViewModel = StateObject(wrappedValue: PostViewModel(postService: postServiceProtocol))
+    init(serviceProtocol: ServiceProtocol) {
+        self._postViewModel = State(wrappedValue: PostViewModel(service: serviceProtocol))
     }
-    
     
     var body: some View {
         ScrollView {
-            ForEach(postViewModel.posts) { post in
-                LazyVStack (alignment: .leading, spacing: 20) {
-                    Text(post.title.capitalized)
-                        .font(.title)
-                        .bold()
-                    Text(post.body)
-                    HStack {
-                        Spacer()
-                        Text(post.postedBy)
-                            .font(.caption)
-                            .italic()
+            LazyVStack () {
+                ForEach(postViewModel.posts) { post in
+                    VStack (alignment: .leading, spacing: 20) {
+                        if let title = post.title {
+                            Text(title.capitalized)
+                                .font(.title)
+                                .bold()
+                        }
+                        
+                        if let body = post.body {
+                            Text(body)
+                        }
+                        if let postedBy = post.postedBy {
+                            HStack {
+                                Spacer()
+                                Text(postedBy)
+                                    .font(.caption)
+                                    .italic()
+                            }
+                        }
                     }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color.white)
+                            .shadow(radius: 10)
+                        
+                    )
+                }
             }
-            .padding()
-            .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.white)
-                    .shadow(radius: 10)
-                
-            )
         }
-        }
-        .alert("Important Message", isPresented: $postViewModel.loadPostFailed, actions: {
-            Text("Reload application")
+        .alert("Important Message", 
+               isPresented: $postViewModel.loadPostFailed,
+               actions: {
+                Button("Reload application") {
+                    postViewModel.fetchPosts()
+                }
         }, message: {
             Text("Please come back later")
         })
@@ -51,5 +63,5 @@ struct PostListView: View {
 }
 
 #Preview {
-    PostListView(postServiceProtocol: PostService(apiRequetProtocol: APIRequest(urlSession: URLSession.shared), api: PostAPI.getAllPost))
+    PostListView(serviceProtocol: PostService(apiRequetProtocol: APIRequest(), api: PostAPI.getAllPost))
 }
