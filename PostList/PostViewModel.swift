@@ -8,10 +8,10 @@
 import Foundation
 import Combine
 
-@Observable
-class PostViewModel {
-    var posts: [Post] = []
-    var loadPostFailed: Bool = false
+//@Observable
+class PostViewModel: ObservableObject {
+    @Published var posts: [Post] = []
+    @Published var loadPostFailed: Bool = false
     
     private let serviceProtocol: ServiceProtocol
     private var cancellables = Set<AnyCancellable>()

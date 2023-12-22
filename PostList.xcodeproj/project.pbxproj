@@ -18,6 +18,7 @@
 		146FED2C2B34D0D900C9A319 /* PostListUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED2B2B34D0D900C9A319 /* PostListUnitTests.swift */; };
 		146FED332B34D30500C9A319 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED322B34D30500C9A319 /* MockURLProtocol.swift */; };
 		146FED342B34D75200C9A319 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED322B34D30500C9A319 /* MockURLProtocol.swift */; };
+		146FED3B2B3547FA00C9A319 /* PostViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FED3A2B3547F900C9A319 /* PostViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		146FED292B34D0D900C9A319 /* PostListUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostListUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146FED2B2B34D0D900C9A319 /* PostListUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListUnitTests.swift; sourceTree = "<group>"; };
 		146FED322B34D30500C9A319 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		146FED3A2B3547F900C9A319 /* PostViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				146FED2B2B34D0D900C9A319 /* PostListUnitTests.swift */,
 				146FED322B34D30500C9A319 /* MockURLProtocol.swift */,
+				146FED3A2B3547F900C9A319 /* PostViewModelTests.swift */,
 			);
 			path = PostListUnitTests;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146FED3B2B3547FA00C9A319 /* PostViewModelTests.swift in Sources */,
 				146FED2C2B34D0D900C9A319 /* PostListUnitTests.swift in Sources */,
 				146FED332B34D30500C9A319 /* MockURLProtocol.swift in Sources */,
 			);
